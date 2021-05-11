@@ -1,5 +1,6 @@
 from pet import Pet, CuddlyPet
 from toy import Toy
+from treat import Treat, ColdPizza, Bacon, VeganSnack
 
 # Begin with no pets.
 pets = []
@@ -10,6 +11,7 @@ main_menu = [
     "Feed Pet",
     "View status of pets",
     "Give a toy to your pets",
+    "Give a treat to your pets",
     "Do nothing",
 ]
 
@@ -42,6 +44,12 @@ adoption_menu = [
     "Cuddly Pet"
 ]
 
+treat_menu = [
+    "Cold Pizza",
+    "Bacon",
+    "VeganSnack"
+]
+
 def main():    
     while True:
         choice = get_user_choice(main_menu)
@@ -59,7 +67,7 @@ def main():
                 pet.get_love()
         if choice == 3:
             for pet in pets:
-                pet.get_food()
+                pet.eat_food()
         if choice == 4:
             for pet in pets:
                 print(pet)
@@ -67,6 +75,17 @@ def main():
             for pet in pets:
                 pet.get_toy(Toy())
         if choice == 6:
+            print("Please choose the type of treat: ")
+            treat_choice = get_user_choice(treat_menu)
+            if treat_choice == 1:
+                treat = ColdPizza()
+            if treat_choice == 2:
+                treat = Bacon()
+            if treat_choice == 3:
+                treat = VeganSnack
+            for pet in pets:
+                pet.get_treat(treat)
+        if choice == 7:
             for pet in pets:
                 pet.be_alive()
 main()

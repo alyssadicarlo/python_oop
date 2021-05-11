@@ -29,7 +29,10 @@ class Pet:
     
     def get_toy(self, toy):
         self.toys.append(toy)
-
+        
+    def get_treat(self, treat):
+        self.fullness += treat.fill
+        self.happiness += treat.joy
 
 class CuddlyPet(Pet):
     
