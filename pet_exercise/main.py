@@ -44,15 +44,18 @@ def main():
         if choice == 2:
             for pet in pets:
                 pet.get_love()
+            print("Pets have been loved!")
         if choice == 3:
             for pet in pets:
                 pet.eat_food()
+            print("Pets have been fed!")
         if choice == 4:
             for pet in pets:
                 print(pet)
         if choice == 5:
             for pet in pets:
                 pet.get_toy(Toy())
+            print("Pets got a toy!")
         if choice == 6:
             treat_choice = treat.get_user_choice()
             if treat_choice == 1:
@@ -63,7 +66,9 @@ def main():
                 treat_type = VeganSnack
             for pet in pets:
                 pet.get_treat(treat_type)
+            print("Pets got a treat!")
         if choice == 7:
             for pet in pets:
                 pet.be_alive()
+            print("Pets did nothing!")
 main()
